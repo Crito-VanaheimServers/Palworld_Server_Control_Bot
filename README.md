@@ -12,7 +12,7 @@ License:
     MIT License
 
 install video: 
-coming soon
+https://www.youtube.com/watch?v=gt1_kpd_73s
 
 node.js download
 https://nodejs.org/en
