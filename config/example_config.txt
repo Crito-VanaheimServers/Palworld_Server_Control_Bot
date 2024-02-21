@@ -1,0 +1,104 @@
+
+//Important: Pay attention to brackets and quotes and commas if any are missing or to many than things will break
+
+{
+    "ControlBot": {
+        //your discord server ID where your bot will be listening
+        "Discord_ID": "45648948947894654541564987",
+		
+        //full path to the location of this bots files use \\ seperating the folder names
+        "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
+		
+        //Battlemetrics Personal Access Token, this is free to obtain and can get from https://www.battlemetrics.com/developers
+        //Currently not in use
+        "Battle_Metrics_Token": "a5f4d65f456ad4f65asd4f65a4d5f64asd65f45ads64f564sadf564asd56f4asd654f56asd4fg56a4sdf564ads5f64asd65f4asd56f456ads4f56asd4f65as4df654dsa65fg46a5dsfg465asd4fg56asd4fg65a4sd1gf56a1sdfg65a4fg564ag54rdf56afg489afd498",
+        
+		//Curseforge API Token, this is free but requires a google account to login and can be obtained from https://console.curseforge.com/#/login
+        //Bot uses this to keep an eye on mod changes to automatically keep mods up to date on your server
+        //if you do not get a token than you will not be able to use modUpdates and should set modUpdates=false above or bot will likely crash
+        "Curse_Forge_Token": "5da4fd54fad654asdf54asd56f456sdf4g865dfg485a4gd54dgf54a",
+        
+		//Set file path to the folder your steam cmd files are located use \\ seperating the folder names
+        "Steam_Path": "C:\\VGS_Server_Files\\Steam_CMD_Files",
+        
+		//Change this to the hour you want server to restart. military (12=12pm 00=12am) https://www.ontheclock.com/convert-military-24-hour-time.aspx
+        "Restart_Hour": "00",
+        
+		//if you do not use Nitrado and you are running this bot on the same machine as the servers than you can set this to true and control your servers from discord buttons
+        "Server_Control": true
+    },
+
+    "Servers": {
+	
+		//you can add as many servers as you want but each server needs its own bot to communicate with
+		//make a name for each server no spaces
+        "VGS_Palworld": {
+			
+			//Set file path to the folder your server files are located or will be located
+            "Server_Path": "C:\\VGS_Server_Files\\Pal_World\\VGS",
+			
+			//If your using Server API then set this to AsaApiLoader.exe
+			//If you have no idea or you are NOT using Server API than set to ArkAscendedServer.exe
+			//info about server API found here https://gameservershub.com/forums/resources/categories/asa-official-resources.111/
+			"EXE_Launcher": "PalServer.exe",
+            
+			//Battlemetrics server ID, Find your server on battlemetrics and select it then in adress bar copy the ID number.
+			//Example: https://www.battlemetrics.com/servers/arksa/24950685 
+			//BMServerID would be 24950685
+			//Currently not in use
+			"Battle_Metrics_ServerID": "12345678",
+			
+			//your bots token from bot you create at https://discord.com/developers/ each server needs its own bot
+            "Player_Count_Bot_Token": "fd54f56a4fg685a4fg984agf654a6fg465ad4gf65asd4fg654a6df4",
+			
+			//your discord bots ID
+            "Bot_ID": "415646546546548489",
+			
+			//Discord channel ID where your server control buttons will appear.
+			//Make this an admin channel only or everyone will have control of your server.
+			//RCON commands can be sent by using / key in chat and selecting the server rcon you want to send commands to
+			//When sending RCON commands do not use quotes. (Example: ListPlayers) is what your would send in the chat to get a list of players from server using RCON
+			//If serverControl is set to false you can still use this channel to send RCON commands. RCON feature should work for Nitrado servers.
+            "Admin_Channel_ID": "454564865489451451564894",
+			
+			//This does not change your server name it is used for the bot titles on discord messages and command names (do not use special characters)
+			"Game_Server_Name": "Vanaheim World",
+			
+			//set your global ip to your server
+            "Global_IP": "12.34.567.890",
+			
+			//The bot should run on same machine as server for everything to work correctly unless your using it for nitrado server
+			//If using for nitrado server and just want player counts, rcon control, and chat then set this to same ip as your global ip
+			//If running on same machine as the servers than set this to your local ip (default 127.0.0.1)
+            "Local_IP": "127.0.0.1",
+			
+			//set the servers port
+            "Game_Port": "8211",
+			
+			//set your servers rcon port
+            "Rcon_Port": "25575",
+			
+			//set your password you use to log in as admin in game here for rcon to work with the bot
+            "Admin_Password": "yourPassord",
+			
+			//Set the start up command line for your ark server
+            "Command_Line": "EpicApp=PalServer -ServerName='Vanaheim World' -port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log"
+        },
+
+        "PalTest": {
+            "Server_Path": "C:\\VGS_Server_Files\\Pal_World\\Test",
+            "EXE_Launcher": "PalServer.exe",
+            "Battle_Metrics_ServerID": "545645645",
+            "Player_Count_Bot_Token": "54daf56f456as4df564asd56f4as56df46a5sdf4g65asd4fg65ads4fg65a",
+            "Bot_ID": "5456465465468468954",
+            "Admin_Channel_ID": "4654564564869478947",
+            "Game_Server_Name": "VGS Test",
+            "Global_IP": "12.34.567.890",
+            "Local_IP": "127.0.0.1",
+            "Game_Port": "8212",
+            "Rcon_Port": "25675",
+            "Admin_Password": "yourpassword",
+            "Command_Line": "EpicApp=PalServer -ServerName='VGS Test' -port=8212 -queryport=27216 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log"
+        }
+    }
+}
