@@ -60,7 +60,7 @@ async function gameWarning([clients, warning, clientsArray]) {
             totalMin -= warnMinutes[i];
         }
 
-        const response = await rconCall([clients, 'DoExit']);
+        rconCall([clients, 'DoExit']);
         await sleep(30000);
 
         if (warning === "ADMIN FORCED RESTART") {
