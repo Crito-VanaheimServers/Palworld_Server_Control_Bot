@@ -2,7 +2,7 @@
 Palworld Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v0.1 02/20/2024
+v0.2 02/20/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -64,7 +64,7 @@ EXTRA FEATURES
     Bot status displays how many players are connected to server vs max player slots available.
 
 Change Notes:
-
+2/24/2024 Fixed issue with restarts. Server not restarting after dialy restart warnings
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation

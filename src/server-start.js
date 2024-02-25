@@ -1,9 +1,13 @@
 const config = require('config');
 const { EmbedBuilder } = require('discord.js');
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+};
+
 module.exports = (startServer);
 
-function startServer([clients, commandSender]) {
+async function startServer([clients, commandSender]) {
     try {
         const client = clients[0];
         const server = clients[1];
@@ -27,6 +31,9 @@ function startServer([clients, commandSender]) {
                 .setColor(0x00e8ff)
             client.channels.cache.get((config.get(`Servers.${server}.Admin_Channel_ID`))).send({ embeds: [startserver] });
         });
+
+        await sleep(30000);
+        clients[2] = false;
     } catch (error) {
         console.error('Error in serverStart:', error);
         return

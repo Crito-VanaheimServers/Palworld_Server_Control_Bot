@@ -51,8 +51,6 @@ function afterLogin() {
                                 console.log(`${result}`);
                                 reBoot([clients[i], `${clients[i][0].user.tag}`]);
                                 await updateServer([clients[i], `${clients[i][0].user.tag}`]);
-                                clients[i][2] = false;
-                                //clients[i][4] = false;
                                 buttonsInfo(clients);
                             }
                         }
@@ -75,8 +73,6 @@ function afterLogin() {
                         console.log(`${result}`);
                     } else {
                         console.log(`${result}`);
-                        await updateServer([clients[i], `${clients[i][0].user.tag}`]);
-                        await buttonsInfo(clients);
                         clients[i][2] = false;
                     }
                 } catch (error) {
@@ -110,10 +106,7 @@ function afterLogin() {
                                     .setColor(0x00e8ff)
                                 interaction.reply({ embeds: [sartcommand] });
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Starting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server`);
-                                clients[i][2] = true;
-                                await updateServer([clients[i], `${clients[i][0].user.tag}`]);
                                 clients[i][2] = false;
-                                buttonsInfo(clients);
                             }
                         } catch (error) {
                             return
@@ -173,7 +166,6 @@ function afterLogin() {
                             const result = await serverStatus(clients[i]);
                             if (`${result}`.includes("Online")) {
                                 if (clients[i][2] === false) {
-                                    clients[i][2] = true;
                                     console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Restarting ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server please wait...`);
                                     const restartcommand = new EmbedBuilder()
                                         .setTitle(config.get(`Servers.${clients[i][1]}.Game_Server_Name`))
@@ -181,11 +173,6 @@ function afterLogin() {
                                         .setColor(0x00e8ff)
                                     interaction.reply({ embeds: [restartcommand] });
                                     rconCall([clients[i], 'DoExit']);
-                                    await sleep(60000);
-                                    await updateServer([clients[i], `${clients[i][0].user.tag}`]);
-                                    clients[i][2] = false;
-                                    //clients[i][4] = false;
-                                    buttonsInfo(clients);
                                 } else {
                                     console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: Active restart/shutdown in progress`);
                                     const restartcommand = new EmbedBuilder()
@@ -193,6 +180,7 @@ function afterLogin() {
                                         .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [restartcommand] });
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
@@ -230,6 +218,7 @@ function afterLogin() {
                                         .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [restartwarning] });
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
@@ -267,6 +256,7 @@ function afterLogin() {
                                         .addFields({ name: `ERROR`, value: `Active restart/shutdown in progress` })
                                         .setColor(0xff0000)
                                     interaction.reply({ embeds: [shutdownwarning] });
+                                    buttonsInfo(clients);
                                 }
                             } else {
                                 console.log(`SENDER: ${commandSender} | COMMAND: ${interaction.customId} | RESPONSE: ${config.get(`Servers.${clients[i][1]}.Game_Server_Name`)} server is already offline, try starting the server`);
