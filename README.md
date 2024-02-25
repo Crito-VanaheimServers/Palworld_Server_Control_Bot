@@ -2,7 +2,7 @@
 Palworld Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v0.2 02/20/2024
+v0.3 02/20/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers
@@ -65,6 +65,7 @@ EXTRA FEATURES
 
 Change Notes:
 2/24/2024 Fixed issue with restarts. Server not restarting after dialy restart warnings
+2/25/2024 Fixed issue where server was waiting on rcon result for DoExit after shutting server down for daily restart and never bringing it back online.
 ###########################	INSTALLATION INSTRUCTIONS	########################################
 
 PART 1:	Nodejs Installation
