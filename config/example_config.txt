@@ -81,8 +81,9 @@
 			//set your password you use to log in as admin in game here for rcon to work with the bot
             "Admin_Password": "yourPassord",
 			
-			//Set the start up command line for your ark server
-            "Command_Line": "EpicApp=PalServer -ServerName='Vanaheim World' -port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log"
+			//Set the start up command line for your palworld server. EpicApp=PalServer is no longer used it was replaced with -publiclobby. dont use "" or '' around your server name.
+            "Command_Line": "-ServerName=Vanaheim World -port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
+
         },
 
         "PalTest": {
@@ -98,7 +99,7 @@
             "Game_Port": "8212",
             "Rcon_Port": "25675",
             "Admin_Password": "yourpassword",
-            "Command_Line": "EpicApp=PalServer -ServerName='VGS Test' -port=8212 -queryport=27216 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log"
+	    "Command_Line": "-ServerName=VGS Test -port=8212 -queryport=27216 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
         }
     }
 }
