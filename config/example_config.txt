@@ -82,7 +82,7 @@
             "Admin_Password": "yourPassord",
 			
 			//Set the start up command line for your palworld server. EpicApp=PalServer is no longer used it was replaced with -publiclobby. dont use "" or '' around your server name.
-            "Command_Line": "-ServerName=Vanaheim World -port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
+            "Command_Line": "-port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
 
         },
 
@@ -99,7 +99,7 @@
             "Game_Port": "8212",
             "Rcon_Port": "25675",
             "Admin_Password": "yourpassword",
-	    "Command_Line": "-ServerName=VGS Test -port=8212 -queryport=27216 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
+	    "Command_Line": "-port=8212 -queryport=27216 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
         }
     }
 }

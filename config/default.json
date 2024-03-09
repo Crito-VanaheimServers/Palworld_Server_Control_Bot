@@ -22,7 +22,7 @@
             "Game_Port": "8211",
             "Rcon_Port": "25575",
             "Admin_Password": "yourPassord",
-            "Command_Line": "-ServerName=VGS Test -port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
+            "Command_Line": "-port=8211 -queryport=27015 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -log -publiclobby"
         }
     }
 }
