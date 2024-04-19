@@ -14,7 +14,7 @@
             "Server_Path": "",
 			"EXE_Launcher": "PalServer.exe",
 			"Battle_Metrics_ServerID": "",
-            "Player_Count_Bot_Token": "",
+            "Bot_Token": "",
             "Bot_ID": "",
             "Admin_Channel_ID": "",
 			"Game_Server_Name": "",
