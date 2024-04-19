@@ -1,22 +1,23 @@
 {
     "ControlBot": {
-        "Discord_ID": "45648948947894654541564987",
-        "Bot_Folder_Path": "C:\\Users\\VGSVa\\OneDrive\\Desktop\\Discord_Server_Control_Bot",
-        "Battle_Metrics_Token": "a5f4d65f456ad4f65asd4f65a4d5f64asd65f45ads64f564sadf564asd56f4asd654f56asd4fg56a4sdf564ads5f64asd65f4asd56f456ads4f56asd4f65as4df654dsa65fg46a5dsfg465asd4fg56asd4fg65a4sd1gf56a1sdfg65a4fg564ag54rdf56afg489afd498",
-        "Steam_Path": "C:\\VGS_Server_Files\\Steam_CMD_Files",
+        "Discord_ID": "",
+        "Bot_Folder_Path": "",
+        "Battle_Metrics_Token": "",
+        "Steam_Path": "",
         "Restart_Hour": "00",
         "Server_Control": true
+        "Player_List": true
     },
 
     "Servers": {
-        "VGS_Palworld": {
-            "Server_Path": "C:\\VGS_Server_Files\\Pal_World\\VGS",
+        "Server_1": {
+            "Server_Path": "",
 			"EXE_Launcher": "PalServer.exe",
-			"Battle_Metrics_ServerID": "12345678",
-            "Player_Count_Bot_Token": "fd54f56a4fg685a4fg984agf654a6fg465ad4gf65asd4fg654a6df4",
-            "Bot_ID": "415646546546548489",
-            "Admin_Channel_ID": "454564865489451451564894",
-			"Game_Server_Name": "Vanaheim World",
+			"Battle_Metrics_ServerID": "",
+            "Player_Count_Bot_Token": "",
+            "Bot_ID": "",
+            "Admin_Channel_ID": "",
+			"Game_Server_Name": "",
             "Global_IP": "12.34.567.890",
             "Local_IP": "127.0.0.1",
             "Game_Port": "8211",

@@ -1,33 +1,37 @@
 const config = require('config');
-const Rcon = require('rcon/node-rcon');
+const { PalRCONClient } = require('palrconclient');
 
 module.exports = async function rconCall([clients, rconCMD]) {
-    try {
-        var server = clients[1];
-
-        var rconoptions = {
-            tcp: true,
-            challenge: false
-        };
-
-        return new Promise((resolve, reject) => {
-            var conn = new Rcon(config.get(`Servers.${server}.Local_IP`), config.get(`Servers.${server}.Rcon_Port`), config.get(`Servers.${server}.Admin_Password`), rconoptions);
-
-            conn.on('auth', function () {
-                conn.send(rconCMD);
-            }).on('response', function (rconInfo) {
-                conn.emit('end');
-                resolve(rconInfo);
-            }).on('error', function (err) {
-                conn.emit('end');
-                reject(err);
-            }).on('end', function () {
-                conn.disconnect();
-            });
-
-            conn.connect();
-        });
-    } catch (error) {
-        return
-    }
+    return new Promise((resolve, reject) => {
+        try {
+            var server = clients[1];
+    
+            const rconClient1 = new PalRCONClient(config.get(`Servers.${server}.Local_IP`), config.get(`Servers.${server}.Rcon_Port`), config.get(`Servers.${server}.Admin_Password`));
+                    
+            PalRCONClient.checkConnection(rconClient1)
+                .then((isValid) => {
+                    if (isValid) {
+                        PalRCONClient.Send(rconClient1, `${rconCMD}`)
+                            .then((response) => { 
+                                console.log(response);
+                                resolve(response);
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error.message);
+                                reject(error);
+                            });
+                    } else {
+                        console.error('Connection failed. Please check your connection details.');
+                        reject(new Error('Connection failed. Please check your connection details.'));
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error.message);
+                    reject(error);
+                });
+        } catch (error) {
+            console.error('Error:', error.message);
+            reject(error);
+        }
+    });
 };

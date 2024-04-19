@@ -32,8 +32,9 @@ async function startServer([clients, commandSender]) {
             client.channels.cache.get((config.get(`Servers.${server}.Admin_Channel_ID`))).send({ embeds: [startserver] });
         });
 
-        await sleep(30000);
-        clients[2] = false;
+        //await sleep(60000);
+        //clients[2] = false;
+        //clients[4] = false;
     } catch (error) {
         console.error('Error in serverStart:', error);
         return

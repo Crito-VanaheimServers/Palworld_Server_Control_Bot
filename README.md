@@ -2,7 +2,7 @@
 Palworld Server Control Bot
 By Crito @Vanaheim Gaming Servers
 https://discord.gg/pxC7qSzQ8X
-v0.4 02/20/2024
+v0.5 04/03/2024
 
 Buy me a pizza:
 https://www.paypal.com/paypalme/VanaheimServers

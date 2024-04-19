@@ -1,7 +1,7 @@
 @echo off
 SETLOCAL EnableExtensions enabledelayedexpansion
 
-set "workdir=%~1\Pal\Binaries\Win64\
+set "workdir=%~1\Pal\Binaries\Win64
 set "workdir=%workdir:\=\\%"
 
 goto ServerCheck
